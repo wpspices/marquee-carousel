@@ -1,0 +1,102 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "wpspices/marquee-carousel",
+	"version": "0.1.0",
+	"title": "Carousel",
+	"category": "widgets",
+	"icon": "slides",
+	"description": "Create marquee carousel inside block editor easily.",
+	"keywords": [ "carousel", "marquee", "marquee block", "block" ],
+	"attributes": {
+		"animID": {
+			"type": "string"
+		},
+		"animType": {
+			"type": "string",
+			"default": "marquee"
+		},
+		"animDuration": {
+			"type": "string",
+			"default": "15s"
+		},
+		"imgHeight": {
+			"type": "string",
+			"default": "32"
+		},
+		"slideGap":{
+			"type": "string",
+			"default": "2rem"
+		},
+		"slideInnerGap":{
+			"type": "string",
+			"default": "0.8rem"
+		},
+		"mcClass":{
+			"type": "string"
+		},
+		"extraStyle":{
+			"type": "string"
+		}
+	},
+	"providesContext": {
+		"wpspices-marquee-carousel/imgHeight": "imgHeight",
+		"wpspices-marquee-carousel/slideGap": "slideGap",
+		"wpspices-marquee-carousel/slideInnerGap": "slideInnerGap"
+	},
+	"example": {},
+	"supports": {
+		"align": [ "wide", "full" ],
+		"color": {
+			"background": true,
+			"text": true
+		},
+		"__experimentalBorder": {
+			"color": true,
+			"radius": true,
+			"style": true,
+			"width": true,
+			"__experimentalDefaultControls": {
+				"color": true,
+				"radius": true,
+				"style": true,
+				"width": true
+			}
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true,
+			"blockGap": {
+				"__experimentalDefault": "2rem"
+			},
+			"__experimentalDefaultControls": {
+				"padding": true,
+				"blockGap": true
+			}
+		},
+		"layout": {
+			"default": {
+				"type": "flex",
+				"flexWrap": "nowrap"
+			}
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true,
+			"__experimentalFontFamily": true,
+			"__experimentalFontWeight": true,
+			"__experimentalFontStyle": true,
+			"__experimentalTextTransform": true,
+			"__experimentalTextDecoration": true,
+			"__experimentalLetterSpacing": true,
+			"__experimentalDefaultControls": {
+				"fontSize": true
+			}
+		},
+		"html": false
+	},
+	"textdomain": "marquee-carousel",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

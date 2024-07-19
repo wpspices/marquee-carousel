@@ -1,0 +1,39 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+ $wpspices_mc_anim_duration: var(--wpspices--marquee-carousel-anim-duration, 15s );
+
+.wp-block-wpspices-marquee-carousel {
+    overflow: hidden;
+	box-sizing: border-box;
+	&:not(.alignfull) {
+		width: 100%;
+	}
+
+	&:not(.has-child-selected) .wp-block-wpspices-marquee-carousel-slide-group, .wp-block-wpspices-marquee-carousel-slide-group:not(.block-editor-block-list__block) {
+		display: inline-flex;
+		width: max-content;
+		will-change: transform;
+		-webkit-transition: $wpspices_mc_anim_duration;
+		transition: $wpspices_mc_anim_duration;
+		animation: playmarquee $wpspices_mc_anim_duration linear infinite;
+		-webkit-animation: playmarquee $wpspices_mc_anim_duration linear infinite;
+		.wp-block-image img{
+			max-width: max-content;
+		}
+	}
+
+	.wp-block-wpspices-marquee-carousel-slide {
+		.wp-block-image {
+			margin: 0;
+		}
+	}
+
+	@keyframes playmarquee {
+		0% {transform: translateX(0);}
+		100% {transform: translateX(-100%);}
+	}
+}

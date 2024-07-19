@@ -1,0 +1,22 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-wpspices-marquee-carousel {
+	display: flex;
+	&.is-selected {
+		.block-list-appender{
+			display: none;
+		}
+	}
+	
+	//on select it must be in column format
+	&.has-child-selected{
+		.wp-block-wpspices-marquee-carousel-slide-group .wp-block-wpspices-marquee-carousel-slide-group-is-layout-flex {
+			flex-direction: column;
+			align-items: baseline;
+		}
+	}
+}

@@ -1,0 +1,64 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "wpspices/marquee-carousel-slide",
+	"version": "0.1.0",
+	"title": "Slide",
+	"category": "widgets",
+	"parent": [ "wpspices/marquee-carousel" ],
+	"icon": "analytics",
+	"description": "Marquee slide.",
+	"attributes": {
+		"imgName": {
+			"type": "string",
+			"default": "wordpress"
+		}
+	},
+	"example": {},
+	"usesContext": [ 
+		"wpspices-marquee-carousel/imgHeight",
+		"wpspices-marquee-carousel/slideInnerGap"
+	],
+	"supports": {
+		"color": {
+			"background": true,
+			"text": true
+		},
+		"__experimentalBorder": {
+			"color": true,
+			"radius": true,
+			"style": true,
+			"width": true,
+			"__experimentalDefaultControls": {
+				"color": true,
+				"radius": true,
+				"style": true,
+				"width": true
+			}
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true,
+			"blockGap": {
+				"__experimentalDefault": "0.5rem"
+			},
+			"__experimentalDefaultControls": {
+				"padding": true,
+				"blockGap": true
+			}
+		},
+		"layout": {
+			"allowSwitching": false,
+			"allowInheriting": false,
+			"default": {
+				"type": "flex",
+				"flexWrap": "nowrap"
+			}
+		},
+		"html": false
+	},
+	"textdomain": "marquee-carousel",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
