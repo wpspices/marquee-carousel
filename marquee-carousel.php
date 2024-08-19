@@ -4,7 +4,7 @@
  * Description:       Create simple eye-catching, customizable carousels with lightweight block plugin
  * Requires at least: 6.1
  * Requires PHP:      7.0
- * Version:           0.1.0
+ * Version:           0.1.1
  * Author:            wpspices
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -34,7 +34,7 @@ if ( ! class_exists( 'Marquee_Carousel' ) ) {
 
 	class Marquee_Carousel {
 
-		public $version = '1.0.1';
+		public $version = '0.1.1';
 
 		// The instance of this class
 		private static $instance = null;
@@ -50,6 +50,7 @@ if ( ! class_exists( 'Marquee_Carousel' ) ) {
 		public function __construct() {
 			// Register block
 			add_action( 'init', array( $this, 'register_blocks_and_scripts' ) );
+			add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_editor_script' ) );
 			add_filter( 'render_block', array( $this, 'render_slide_group' ), 99, 3 );
 		}
 
@@ -72,6 +73,17 @@ if ( ! class_exists( 'Marquee_Carousel' ) ) {
 
 			// Child Marquee slide block
 			register_block_type( __DIR__ . '/build/slide' );
+		}
+
+		public function enqueue_editor_script() {
+			//Provide data for block
+			wp_localize_script(
+				'wpspices-marquee-carousel-editor-script',
+				'marqueeBlockData',
+				array(
+					'assets_url' => esc_url( plugins_url( 'assets/img/', __FILE__ ) ),
+				)
+			);
 		}
 
 		//render marquee carousel

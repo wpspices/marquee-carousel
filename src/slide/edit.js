@@ -18,7 +18,6 @@ import {
 } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
 import { useSelect, useDispatch } from '@wordpress/data';
-import { store as coreStore } from '@wordpress/core-data';
 
 import { mcEmpty, mcUcaseFirst } from "../helper";
 /**
@@ -45,18 +44,8 @@ export default function Edit({
 		updateBlockAttributes //Use to to update block attributes using clientId
 	} = useDispatch( blockEditorStore );
 
-	const {
-		siteUrl = '',
-		siteData
-	} = useSelect( ( select ) => {
-		const {  getEntityRecord } = select( coreStore );
-		const siteData = getEntityRecord( 'root', '__unstableBase' );
-		return {
-			siteUrl: siteData?.home,
-			siteData
-		};
-	}, [] );
-
+	const assets_url = marqueeBlockData.assets_url;
+	
 	const { 
 		marqueeCarouselClientID,
 		imageClientIds,
@@ -95,7 +84,7 @@ export default function Edit({
 			{
 				height: mcEmpty( context['wpspices-marquee-carousel/imgHeight'] ) ? '35px' : context['wpspices-marquee-carousel/imgHeight']+'px' ,
 				sizeSlug: 'full',
-				url: siteUrl+'/wp-content/plugins/marquee-carousel/assets/img/'+imgName+'.svg',
+				url: assets_url+''+imgName+'.svg',
 				className: 'marquee-carousel-image',
 			},
 		],
