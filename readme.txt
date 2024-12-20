@@ -1,8 +1,8 @@
 === Marquee Carousel - CSS only Carousel ===
 Contributors:      wpspices
 Tags:              carousel block, block, marquee block, carousel, marquee
-Tested up to:      6.6
-Stable tag:        0.1.1
+Tested up to:      6.7
+Stable tag:        0.1.2
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,6 +22,10 @@ Create simple eye-catching carousels that scroll smoothly across your pages, cap
 1. Settings
 
 == Changelog ==
+
+v0.1.2
+======
+* Fixed: image height
 
 v0.1.1
 ======

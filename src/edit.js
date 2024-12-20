@@ -156,7 +156,7 @@ export default function Edit({
 					<RangeControl
 						label={ __('Image height', 'marquee-carousel') }
 						value={ parseInt( imgHeight ) }
-						onChange={ ( imgHeight ) => setAttributes( { imgHeight } ) }
+						onChange={ ( imgHeight ) => setAttributes( { imgHeight: imgHeight.toString() } ) }
 						min={ 24 }
 						max={ 500 }
 					/>
